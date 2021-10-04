@@ -20,12 +20,12 @@ const array1 = [1, 4, 9, 16];
 // // MAP // 
 // creates a new array populated with the results of calling a provided function on every element in the calling array.
 Array.prototype.myMap = function(callbackFn) {
+    const map1 = [];
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
         const map1 = (this[i],i, this)
         callbackFn(map1);
     }
-
 };
 
 //Test
