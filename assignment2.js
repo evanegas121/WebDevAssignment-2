@@ -42,7 +42,7 @@ Array.prototype.myFilter = function(callbackFn) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
         if (callbackFn(this[i],i, this)){
-            filter.push(this[i])
+            filter=+(this[i])
         }
     }
     return filter;
