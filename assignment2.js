@@ -36,9 +36,26 @@ Array.prototype.myMap = function(callbackFn) {
 // array1.map((x,i) => console.log(x*2,i))
 
 // // FILTER //
-// Array.prototype.myFilter = function() {
+//The filter() method creates a new array with all elements that pass the test implemented by the provided function
+Array.prototype.myFilter = function(callbackFn) {
+    const filter = [];
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        if (callbackFn(this[i],i, this)){
+            filter.push(this[i])
+        }
+    }
+    return filter;
 
-// };
+};
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(word => word.length > 6);
+// console.log(result);
+
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.myFilter(word => word.length > 6);
+// console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
 
 // // SOME //
 // Array.prototype.mySome = function() {
