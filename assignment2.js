@@ -15,7 +15,7 @@ Array.prototype.myEach = function(callbackFn) {
 // console.log("forEach: ")
 // arr.forEach((x,i) => console.log(x,i))
 
-const array1 = [1, 4, 9, 16];
+//const array1 = [1, 4, 9, 16];
 
 // // MAP // 
 // creates a new array populated with the results of calling a provided function on every element in the calling array.
@@ -81,9 +81,18 @@ Array.prototype.myFilter = function(callbackFn) {
 //  console.log(checkAvailability(fruits, 'banana'))
 
 // // EVERY //
-// Array.prototype.myEvery = function() {
-
-// };
+Array.prototype.myEvery = function(callbackFn) {
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        if (!callbackFn(this[i],i, this)){
+            return false;
+        }
+    }
+    return true;
+};
+// const isBelowThreshold = (currentValue) => currentValue >= 40;
+// const array1 = [40, 50, 70, 10, 80, 90];
+// console.log(array1.myEvery(isBelowThreshold)); 
 
 // // REDUCE //
 // Array.prototype.myReduce = function() {
