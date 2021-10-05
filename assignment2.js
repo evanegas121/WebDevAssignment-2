@@ -58,9 +58,27 @@ Array.prototype.myFilter = function(callbackFn) {
 // expected output: Array ["exuberant", "destruction", "present"]
 
 // // SOME //
-// Array.prototype.mySome = function() {
+ Array.prototype.mySome = function(callbackFn) {
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        if (this[i] && callbackFn(this[i],i, this)){
+            return true;
+        }
+    }
+    return false;
 
-// };
+
+ };
+//  const fruits = ['apple', 'banana', 'mango', 'guava'];
+
+//  function checkAvailability(arr, val) {
+//    return arr.mySome(function(arrVal) {
+//      return val === arrVal;
+//    });
+//  }
+ 
+//  console.log(checkAvailability(fruits, 'kela'))  // false
+//  console.log(checkAvailability(fruits, 'banana'))
 
 // // EVERY //
 // Array.prototype.myEvery = function() {
