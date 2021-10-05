@@ -1,7 +1,6 @@
 
 // const arr = [1,2];
-//Without using the native “Array.prototype.forEach” method of JavaScript, compose a function titled “myEach” that will take in an array of elements and execute any callback function on each of those elements.
-// FOR EACH //
+// FOR EACH // executes a provided function once per array element.
 Array.prototype.myEach = function(callbackFn) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
@@ -16,10 +15,25 @@ Array.prototype.myEach = function(callbackFn) {
 // console.log("forEach: ")
 // arr.forEach((x,i) => console.log(x,i))
 
-// // MAP //
-// Array.prototype.myMap = function() {
+const array1 = [1, 4, 9, 16];
 
-// };
+// // MAP // 
+// creates a new array populated with the results of calling a provided function on every element in the calling array.
+Array.prototype.myMap = function(callbackFn) {
+    const map1 = [];
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        const map1 = (this[i],i, this)
+        callbackFn(map1);
+    }
+};
+
+//Test
+// array1.map((x,i) => console.log(x*2,i));
+// // const map1 = array1.map(x => x * 2);
+// // console.log(map1);
+// console.log("Map: ")
+// array1.map((x,i) => console.log(x*2,i))
 
 // // FILTER //
 // Array.prototype.myFilter = function() {
