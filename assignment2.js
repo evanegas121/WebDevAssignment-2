@@ -102,22 +102,14 @@ Array.prototype.myReduce = function(callbackFn,value) {
       return value;
 };
 
-const array1 = [1, 2, 3, 4];
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
-
-// 1 + 2 + 3 + 4
-console.log(array1.myReduce(reducer));
-// expected output: 10
-
-// 5 + 1 + 2 + 3 + 4
-console.log(array1.myReduce(reducer, 5));
-// expected output: 15
-
-
 // // INCLUDES //
-// Array.prototype.myIncludes = function() {
-
-// };
+Array.prototype.myIncludes = function(callbackFn) {
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        if (this[i]) return true;
+    }
+    return false;
+};
 
 // // INDEXOF //
 // Array.prototype.myIndexOf = function() {
