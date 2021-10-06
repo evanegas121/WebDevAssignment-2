@@ -4,7 +4,7 @@
 Array.prototype.myEach = function(callbackFn) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
-        
+
         callbackFn(this[i],i, this);
     }
 };
@@ -94,9 +94,25 @@ Array.prototype.myEvery = function(callbackFn) {
 // console.log(array1.myEvery(isBelowThreshold)); 
 
 // // REDUCE //
-// Array.prototype.myReduce = function() {
+Array.prototype.myReduce = function(callbackFn,value) {
+    for (let i =0 ; i < this.length; i++) {
+        if (value == undefined) {value = this[i];}
+        else { value = callbackFn.call(undefined, value, this[i],i, this);}
+      }
+      return value;
+};
 
-// };
+const array1 = [1, 2, 3, 4];
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.myReduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.myReduce(reducer, 5));
+// expected output: 15
+
 
 // // INCLUDES //
 // Array.prototype.myIncludes = function() {
