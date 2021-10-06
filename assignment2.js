@@ -42,11 +42,10 @@ Array.prototype.myFilter = function(callbackFn) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
         if (callbackFn(this[i],i, this)){
-            filter.push(this[i])
+            filter[filter.length]=(this[i])
         }
-    }
+    } 
     return filter;
-
 };
 // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 // const result = words.filter(word => word.length > 6);
@@ -55,7 +54,7 @@ Array.prototype.myFilter = function(callbackFn) {
 // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 // const result = words.myFilter(word => word.length > 6);
 // console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
+//expected output: Array ["exuberant", "destruction", "present"]
 
 // // SOME //
  Array.prototype.mySome = function(callbackFn) {
