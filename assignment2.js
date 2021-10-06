@@ -44,9 +44,8 @@ Array.prototype.myFilter = function(callbackFn) {
         if (callbackFn(this[i],i, this)){
             filter[filter.length]=(this[i])
         }
-    }
+    } 
     return filter;
-
 };
 // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 // const result = words.filter(word => word.length > 6);
