@@ -113,9 +113,9 @@ Array.prototype.myIncludes = function(array) {
 
 // // INDEXOF //
 Array.prototype.myIndexOf = function(arg,index) {
-    for(let i = index ; i < this.length; i++){
+    for(let i = index || 0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
-        if (arg == this[i]){return i;}
+        if (this[i]=== arg) {return i;}
     }
     return -1;
 };
@@ -131,9 +131,14 @@ Array.prototype.myPush = function() {
 };
 
 // // LASTINDEXOF //
-// Array.prototype.myLastIndexOf = function() {
+Array.prototype.myLastIndexOf = function(arg, index) {
+    for(let i = index || this.length ; i > 0 ; i--){
+        if (this[i] == undefined) continue;
+        if (this[i] === arg) {return i;}
+    }
+    return -1;
+};
 
-// };
 
 // // KEYS //
 // Object.grabKeys = function() {
