@@ -97,13 +97,13 @@ Array.prototype.myEvery = function(callbackFn) {
 Array.prototype.myReduce = function(callbackFn,value) {
     for (let i =0 ; i < this.length; i++) {
         if (value == undefined) {value = this[i];}
-        else { value = callbackFn.call(undefined, value, this[i],i, this);}
+        else { value = callbackFn.call(undefined, value,this[i],i,this);}
       }
       return value;
 };
 
 // // INCLUDES //
-Array.prototype.myIncludes = function(callbackFn) {
+Array.prototype.myIncludes = function(array) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
         if (this[i]) return true;
@@ -112,14 +112,23 @@ Array.prototype.myIncludes = function(callbackFn) {
 };
 
 // // INDEXOF //
-// Array.prototype.myIndexOf = function() {
-
-// };
+Array.prototype.myIndexOf = function(arg,index) {
+    for(let i = index ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        if (arg == this[i]){return i;}
+    }
+    return -1;
+};
 
 // // PUSH //
-// Array.prototype.myPush = function() {
-
-// };
+Array.prototype.myPush = function() {
+    const array = [];
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        array[array.length]=(this[i])
+    } 
+    return (array.length + 1);
+};
 
 // // LASTINDEXOF //
 // Array.prototype.myLastIndexOf = function() {
