@@ -139,10 +139,14 @@ Array.prototype.myLastIndexOf = function(arg, index) {
     return -1;
 };
 
-// // KEYS //
-// Object.grabKeys = function() {
-
-// };
+// // KEYS // 
+Object.grabKeys = function(object) {
+    var keys = [];
+    for (let i in object) {
+    keys[keys.length] = i;
+    }
+    return keys;
+};
 
 // // VALUES //
 // Object.grabValues = function() {
