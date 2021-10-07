@@ -149,6 +149,10 @@ Object.grabKeys = function(object) {
 };
 
 // // VALUES //
-// Object.grabValues = function() {
-
-// };
+Object.grabValues = function(object) {
+    var keys = [];
+    for (let i in object) {
+    keys[keys.length] = object[i];
+    }
+    return keys;
+};
