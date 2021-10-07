@@ -132,13 +132,12 @@ Array.prototype.myPush = function() {
 
 // // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(arg, index) {
-    for(let i = index || this.length ; i > 0 ; i--){
+    for(let i = index || this.length - 1 ; i > -1; i--){
         if (this[i] == undefined) continue;
         if (this[i] === arg) {return i;}
     }
     return -1;
 };
-
 
 // // KEYS //
 // Object.grabKeys = function() {
