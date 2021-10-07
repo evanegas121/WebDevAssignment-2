@@ -121,9 +121,14 @@ Array.prototype.myIndexOf = function(arg,index) {
 };
 
 // // PUSH //
-// Array.prototype.myPush = function() {
-
-// };
+Array.prototype.myPush = function() {
+    const array = [];
+    for(let i =0 ; i < this.length; i++){
+        if (this[i] == undefined) continue;
+        array[array.length]=(this[i])
+    } 
+    return (array.length + 1);
+};
 
 // // LASTINDEXOF //
 // Array.prototype.myLastIndexOf = function() {
