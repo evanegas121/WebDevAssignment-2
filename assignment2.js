@@ -1,6 +1,5 @@
 
-// const arr = [1,2];
-// FOR EACH // executes a provided function once per array element.
+// FOR EACH // 
 Array.prototype.myEach = function(callbackFn) {
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
@@ -8,17 +7,9 @@ Array.prototype.myEach = function(callbackFn) {
         callbackFn(this[i],i, this);
     }
 };
-//Test
-// console.log("myEach: ")
-// arr.myEach((x,i) => console.log(x,i));
 
-// console.log("forEach: ")
-// arr.forEach((x,i) => console.log(x,i))
-
-//const array1 = [1, 4, 9, 16];
 
 // // MAP // 
-// creates a new array populated with the results of calling a provided function on every element in the calling array.
 Array.prototype.myMap = function(callbackFn) {
     const map1 = [];
     for(let i =0 ; i < this.length; i++){
@@ -28,12 +19,6 @@ Array.prototype.myMap = function(callbackFn) {
     }
 };
 
-//Test
-// array1.map((x,i) => console.log(x*2,i));
-// // const map1 = array1.map(x => x * 2);
-// // console.log(map1);
-// console.log("Map: ")
-// array1.map((x,i) => console.log(x*2,i))
 
 // // FILTER //
 //The filter() method creates a new array with all elements that pass the test implemented by the provided function
@@ -47,14 +32,6 @@ Array.prototype.myFilter = function(callbackFn) {
     } 
     return filter;
 };
-// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-// const result = words.filter(word => word.length > 6);
-// console.log(result);
-
-// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-// const result = words.myFilter(word => word.length > 6);
-// console.log(result);
-//expected output: Array ["exuberant", "destruction", "present"]
 
 // // SOME //
  Array.prototype.mySome = function(callbackFn) {
@@ -68,16 +45,6 @@ Array.prototype.myFilter = function(callbackFn) {
 
 
  };
-//  const fruits = ['apple', 'banana', 'mango', 'guava'];
-
-//  function checkAvailability(arr, val) {
-//    return arr.mySome(function(arrVal) {
-//      return val === arrVal;
-//    });
-//  }
- 
-//  console.log(checkAvailability(fruits, 'kela'))  // false
-//  console.log(checkAvailability(fruits, 'banana'))
 
 // // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
@@ -89,9 +56,7 @@ Array.prototype.myEvery = function(callbackFn) {
     }
     return true;
 };
-// const isBelowThreshold = (currentValue) => currentValue >= 40;
-// const array1 = [40, 50, 70, 10, 80, 90];
-// console.log(array1.myEvery(isBelowThreshold)); 
+
 
 // // REDUCE //
 Array.prototype.myReduce = function(callbackFn,value) {
@@ -121,13 +86,12 @@ Array.prototype.myIndexOf = function(arg,index) {
 };
 
 // // PUSH //
-Array.prototype.myPush = function() {
-    const array = [];
-    for(let i =0 ; i < this.length; i++){
+Array.prototype.myPush = function(...arg) {
+    for(let i = 0 ; i < arg.length; i++){
         if (this[i] == undefined) continue;
-        array[array.length]=(this[i])
+        this[this.length]=(arg[i])
     } 
-    return (array.length + 1);
+    return (this.length);
 };
 
 // // LASTINDEXOF //
@@ -156,3 +120,4 @@ Object.grabValues = function(object) {
     }
     return keys;
 };
+
