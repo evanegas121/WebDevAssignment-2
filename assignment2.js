@@ -43,7 +43,6 @@ Array.prototype.myFilter = function(callbackFn) {
     }
     return false;
 
-
  };
 
 // // EVERY //
@@ -68,10 +67,11 @@ Array.prototype.myReduce = function(callbackFn,value) {
 };
 
 // // INCLUDES //
-Array.prototype.myIncludes = function(array) {
-    for(let i =0 ; i < this.length; i++){
-        if (this[i] == undefined) continue;
-        if (this[i]) return true;
+Array.prototype.myIncludes = function(search,index) {
+    var obj = search
+    for(let i = index || 0 ; i < this.length ; i++){
+       // if (this[i] == undefined) continue;
+        if (this[i] === obj) return true;
     }
     return false;
 };
