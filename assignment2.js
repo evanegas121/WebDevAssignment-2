@@ -14,7 +14,7 @@ Array.prototype.myMap = function(callbackFn) {
     const map1 = [];
     for(let i =0 ; i < this.length; i++){
         if (this[i] == undefined) continue;
-        const map1 = (this[i],i, this)
+        map1[map1.length] = (this[i],i, this)
         callbackFn(map1);
     }
 };
